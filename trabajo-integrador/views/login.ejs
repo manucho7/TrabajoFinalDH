@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include partials/head.ejs %>
+    <title>Login</title>
+    <!-- Fuentes -->
+    <link rel="stylesheet" href="/stylesheets/login.css" />
+  </head>
+  <body>
+    <!-- encabezado -->
+    <%- include partials/header.ejs %>
+    <div class="container">
+      <form method="POST" action="/users/login" id="iniciar">
+        <!--parte superior formulario-->
+        <div class="caja1">
+          <h2>Iniciar sesión</h2>
+          <hr size="20" />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value="<%= username %>"
+            placeholder="Correo electronico"
+            required
+          />
+          <input
+            type="password"
+            id="password"
+            name="clave1"
+            value="<%= password %>"
+            placeholder="contraseña"
+            required
+          />
+          <!--boton-->
+          <% if (errors && errors.length > 0) { %>
+          <div class="errors">
+            Errors:
+            <ul>
+              <% for(let i = 0; i < errors.length; i++) { %>
+              <li><%= errors[i].msg %></li>
+              <% } %>
+            </ul>
+          </div>
+          <% } %>
+          <input type="submit" class="boton" value="INICIAR SESION" />
+          <input type="checkbox" name="guardar" <%= isChecked ? "checked" : "" %> >Recordar contrasena?</input>
+        </div>
+        <!--Parte inferior formulario-->
+        <div class="caja2">
+          <p id="registro">¿No eres miembro? !Registrate ahora!</p>
+          <!--boton-->
+          <a class="inicio" href="http://localhost:3000/users/sign-up"> EMPEZAR </a>
+        </div>
+        <div class="erroresLogin">
+          <ul>
+
+          </ul>
+        </div>
+      </form>
+    </div>
+    <script src="/script/validatorLogin.js"></script>
+    <%- include partials/footer.ejs %>
+  </body>
+</html>

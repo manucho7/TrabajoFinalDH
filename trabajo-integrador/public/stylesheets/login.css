@@ -1,0 +1,108 @@
+body {
+  min-height: 900px;
+}
+.row {
+  margin-top: 20px;
+}
+.container {
+  padding-top: 120px;
+}
+/*titulo*/
+.container h2 {
+  font-family: "Open Sans";
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 35px;
+  padding: 5px;
+  font-weight: bolder;
+  text-align: center;
+}
+.caja1 hr {
+  width: 25%;
+  font-size: 10px;
+  margin-top: 0;
+  border: 2.5px solid rgba(53, 110, 175, 1);
+}
+/*Formulario completo*/
+.caja1 {
+  margin-left: auto;
+  max-width: 500px;
+  margin-right: auto;
+  border: 1px solid rgba(53, 110, 175, 0.5);
+  background-color: rgba(255, 255, 240, 0.472);
+  margin-bottom: -15px;
+  padding: 40px;
+}
+.caja2 {
+  margin-left: auto;
+  max-width: 500px;
+  margin-right: auto;
+  border: 1px solid rgba(53, 110, 175, 0.5);
+  background-color: rgb(196, 216, 240);
+  padding-left: 40px;
+  padding-right: 40px;
+  text-align: center;
+  font-family: "Open Sans";
+  font-weight: bolder;
+  padding-bottom: 30px;
+}
+/* campos a completar -------------------------------------*/
+#email,
+#password {
+  font-family: "Open Sans";
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  margin-top: 30px;
+  background-color: rgb(196, 216, 240);
+}
+/*Boton iniciar sesion-------------------------------------*/
+.boton {
+  height: 50px;
+  width: 100%;
+  background-color: rgb(53, 110, 175);
+  border: rgb(3, 23, 39);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  color: ivory;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-weight: bolder;
+}
+/*texto con redireccionamiento----------------------*/
+#registro {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+/*Boton empezar-------------------------------------*/
+.inicio {
+  height: 50px;
+  width: 100%;
+  border: 3px solid rgb(53, 110, 175);
+  background-color: rgb(196, 216, 240);
+  color: rgb(53, 110, 175);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  margin-bottom: 30px;
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
+  padding-left: 37%;
+  padding-right: 37%;
+}
+#contraceña {
+  
+  font-size: small;
+  text-align: right;
+}
+.footer {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+}
+
+.erroresLogin li {
+  color: red;
+  text-decoration: underline;
+  list-style-type: upper-roman;
+}

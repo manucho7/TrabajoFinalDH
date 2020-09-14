@@ -1,0 +1,101 @@
+/* Container */
+.container .products h1 {
+  font-family: "Courier New", Courier, monospace;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.container h1 {
+  padding: 20px 0;
+  font-weight: 200;
+}
+
+.container {
+  padding-bottom: 35px;
+  padding-top: 100px;
+}
+
+/* Banner */
+.banner {
+  background: url(/images/banner.png);
+  height: 300px;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+}
+.banner .banner-subtitulo {
+  color: white;
+  width: 320px;
+  text-align: left;
+  font-family: "Courier New", Courier, monospace;
+  margin-left: 50px;
+  margin-top: 160px;
+}
+.banner .banner-subtitulo .borde {
+  border: 1px solid white;
+  width: 100px;
+  margin-left: 80px;
+}
+.products article {
+  text-align: center;
+  position: relative;
+  transform: scale(0.9);
+}
+.products article a h3 {
+  color: white;
+  position: absolute;
+  bottom: 35px;
+  left: 17px;
+  right: 16px;
+  background-color: rgba(1, 1, 1, 0.23);
+  font-weight: 300;
+  font-size: 26px;
+}
+.products article a img {
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 5px 5px 5px 5px;
+  box-shadow: 1px 3px 4px 0px grey;
+}
+
+.products article {
+  padding: 0;
+}
+
+.products article:hover {
+  transition: all 0.1s ease-out;
+  transform: scale(1);
+}
+
+.products article:hover label {
+  opacity: 1;
+  position: absolute;
+  bottom: 44px;
+  left: 0;
+  z-index: 5;
+  right: 0;
+  background-color: rgba(14, 14, 14, 0.4);
+  padding: 10px;
+  border-radius: 0 0 3px 3px;
+  color: white;
+  font-size: 23px;
+  font-weight: 100;
+  transition: all 0.3s;
+}
+
+@media (max-width: 768px) {
+  .products article:hover label {
+    bottom: 12px;
+    padding: 20px;
+  }
+}
+
+.products article label {
+  opacity: 0;
+}
+
+/* Video */
+.video {
+  text-align: center;
+  margin-top: 30px;
+}

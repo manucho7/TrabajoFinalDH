@@ -1,0 +1,172 @@
+.crearNuevoCliente {
+    display: flex;
+  }
+  .container {
+    padding-top: 110px;
+  }
+  /*Titulo----*/
+  .container h2 {
+    font-family: "Open Sans";
+    margin-left: 0;
+    font-size: 35px;
+    padding: 5px;
+    font-weight: bolder;
+    text-align: left;
+  }
+  h3 {
+    border-bottom: 1px solid rgb(171, 174, 184);
+  }
+  .totalCarrito2 {
+    height: 100px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 40px;
+  }
+  .completarCantidad {
+    width: 10%;
+  }
+  .lista2 {
+    margin-top: 20px;
+    list-style: none;
+    color: black;
+    font-weight: bolder;
+  }
+  /*Lista horizontal----------------------------------------------------------*/
+  .lista {
+    list-style: none;
+    color: black;
+    font-weight: bolder;
+  }
+  .DatosProducto {
+    font-size: 20px;
+    font-family: "Work Sans", sans-serif;
+  }
+  /*CAJA 1--------------------------------------------------------*/
+  .caja1 {
+    border: 1px solid rgb(161, 170, 182);
+    background-color: rgba(246, 246, 246, 0.438);
+    padding: 7px;
+  }
+  /*CAJA 2---------------------------------------------------------*/
+  .caja2 {
+    border: 1px solid rgb(161, 170, 182);
+    background-color: rgba(246, 246, 246, 0.438);
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+  .caja2 .DatosProductos img {
+    height: 70px;
+  }
+  .caja2 form {
+    display:flex;
+  }
+  #cant {
+    width: 40%;
+    padding: 1px;
+    border: 1px solid black;
+    text-align: center;
+  }
+  /*CAJA 3----------------------------------------------------------*/
+  .caja3 {
+    display: flex;
+    border: 1px solid rgb(161, 170, 182);
+    background-color: rgba(246, 246, 246, 0.438);
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 5%;
+    padding-right: 5%;
+    justify-content: flex-end;
+  }
+  /*CAJA 4 ------------------------------------------------------*/
+  .caja4 {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .caja4 .cajita li {
+    list-style: none;
+    color: black;
+    font-weight: bolder;
+    font-size: 20px;
+    padding: 5px;
+  }
+  .caja4 .cajita h1 {
+    color: black;
+    font-family: "Work Sans", sans-serif;
+    font-size: 30px;
+    text-align: left;
+  }
+  .totalCarrito {
+    background-color: rgba(246, 246, 246, 0.438);
+    border-bottom: 1px solid rgb(161, 170, 182);
+    width: 100%;
+    padding: 20px;
+  }
+  .cajita {
+    margin-top: 20px;
+    background-color: rgba(246, 246, 246, 0.438);
+    padding: 0;
+    border: 1px solid rgb(161, 170, 182);
+    width: 100%;
+  }
+  .position {
+    margin-left: auto;
+  }
+  .cajaProd {
+    margin-top: 20px;
+    background-color: rgba(246, 246, 246, 0.438);
+    padding: 00px;
+    border: 1px solid rgb(161, 170, 182);
+    width: 100%;
+  }
+  .cajaPrincipal {
+    width: 100%;
+  }
+  /*CAJA 5---------------------------------------------------------*/
+  .envio,
+  .total,
+  .subtotal,
+  .descuento {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 0;
+  }
+  .caja5 hr {
+    width: 70%;
+    border: 0.1px solid rgba(53, 110, 175, 0.2);
+    top: -5px;
+  }
+  .caja5 {
+    padding: 30px;
+  }
+  /*Botones e input------------------------------------------------------------*/
+  .botonFinalizar {
+    background-color: rgb(53, 110, 175);
+    color: rgb(255, 255, 255);
+    width: 100%;
+    font-weight: bolder;
+    border: 1px solid rgb(161, 170, 182);
+    margin: 10px;
+    padding: 10px;
+  }
+  
+  .caja3 .campoLlenar {
+    background-color: rgba(180, 190, 202, 0.233);
+    border: 1px solid rgb(181, 196, 209);
+    width: 20%;
+    padding: 5px;
+    margin-left: 10px;
+  }
+  .botonVaciar {
+    background-color: rgb(53, 110, 175);
+    color: white;
+    width: 100%;
+  }
+  .botonVaciar {
+    margin-left: 40%;
+  }
+  .completarCant {
+    width: 50px;
+  }
+  .algo {
+    width: 100%;
+  }

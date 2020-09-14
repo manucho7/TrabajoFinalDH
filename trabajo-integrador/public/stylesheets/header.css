@@ -1,0 +1,44 @@
+.encabezado {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 30px;
+  background-color: rgba(255, 255, 255, 0.8);
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  box-shadow: 0 4px 25px -1px grey;
+}
+
+.encabezado.is-login {
+  padding: 10px 158px 20px 26px;
+}
+.encabezado .logo {
+  height: 60px;
+}
+.encabezado .iconos {
+  font-size: 20px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.encabezado .iconos i {
+  padding-right: 50px;
+}
+
+@media (max-width: 768px) {
+  .encabezado {
+    padding: 10px 20px;
+  }
+}
+
+.avatar {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  margin: 5px 12px;
+  box-shadow: -1px 5px 2px 0px #2f4f4f59;
+  padding: 2px;
+  border: solid 1px;
+}

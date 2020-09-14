@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>New product</title>
+    <%- include partials/head.ejs %>
+    <link rel="stylesheet" href="/stylesheets/new_product.css" />
+  </head>
+  <body>
+    <!-- encabezado -->
+    <%- include partials/header.ejs %>
+    <div class="container">
+      <form method="POST" enctype="multipart/form-data" action="/products" class="formProduct">
+        <section class="article-header">
+          <div class="row">
+            <div class="col-md-5 col-xs-12 article-photo">
+              <div class="imagen-vacia"></div>
+              <div class="imagen-controls">
+                <input type="file" id="img" name="img" accept="image/*" />
+              </div>
+            </div>
+            <div class="col-md-6 col-xs-12 article-price">
+              <div class="controls">
+                <label for="nombre-producto">Nombre:</label>
+                <input
+                  required
+                  type="text"
+                  id="nombre-producto"
+                  placeholder="Ingrese Nombre del producto"
+                  class="product-name"
+                  name="title"
+                />
+                <label for="precio-producto">Precio:</label>
+                <input
+                required
+                  type="number"
+                  id="precio-producto"
+                  placeholder="Ingrese Precio del producto"
+                  class="product-price"
+                  name="price"
+                />
+                <label for="cantidad-producto">Cantidad:</label>
+                <input
+                required
+                  type="number"
+                  id="cantidad-producto"
+                  placeholder="Ingrese cantidad disponible"
+                  class="product-price"
+                  name="amount"
+                />
+                <select name="category">
+                  <option value="Remeras">Remera</option>
+                  <option value="Billeteras">Billetera</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="caracteristicas">
+          <h3 class="subtitle">CARACTERISTICAS</h3>
+          <div class="caracteristicas-content row">
+            <dl class="caract-list col-xs-12 col-md-6">
+              <dt>Genero:</dt>
+              <dd>
+                <input
+                required
+                  type="text"
+                  placeholder="Genero"
+                  class="input-description"
+                  name="productGender"
+                />
+              </dd>
+              <br />
+              <dt>Altura:</dt>
+              <dd>
+                <input
+                required
+                  type="number"
+                  placeholder="Altura"
+                  class="input-description"
+                  name="height"
+                />
+              </dd>
+              <br />
+              <dt>Cantidad de divisiones para tarjetas:</dt>
+              <dd>
+                <input
+                required
+                  type="text"
+                  placeholder="Ingrese cant. de divisiones"
+                  class="input-description"
+                  name="divisiones"
+                />
+              </dd>
+              <br />
+              <dt>Proteccion RFID:</dt>
+              <dd>
+                <input
+                required
+                  type="text"
+                  placeholder="SI/NO"
+                  class="input-description"
+                  name="proteccionRFID"
+                />
+              </dd>
+              <br />
+              <dt>Garantia:</dt>
+              <dd>
+                <input
+                required
+                  type="text"
+                  placeholder="Garantia"
+                  class="input-description"
+                  name="garantia"
+                />
+              </dd>
+              <br />
+            </dl>
+            <dl class="caract-list col-xs-12 col-md-6">
+              <dt>Material:</dt>
+              <dd>
+                <input
+                required
+                  type="text"
+                  placeholder="Material"
+                  class="input-description"
+                  name="material"
+                />
+              </dd>
+              <br />
+              <dt>Ancho:</dt>
+              <dd>
+                <input
+                required
+                  type="number"
+                  placeholder="Ancho"
+                  class="input-description"
+                  name="width"
+                />
+              </dd>
+              <br />
+              <dt>Profundidad:</dt>
+              <dd>
+                <input
+                required
+                  type="number"
+                  placeholder="Profundidad"
+                  class="input-description"
+                  name="deep"
+                />
+              </dd>
+              <br />
+              <dt>Monedero:</dt>
+              <dd>
+                <input
+                required
+                  type="text"
+                  placeholder="SI/NO"
+                  class="input-description"
+                  name="money"
+                />
+              </dd>
+              <br />
+            </dl>
+          </div>
+        </section>
+        <div class="productDescription row">
+          <h3 class="subtitle">DESCRIPCION DEL PRODUCTO</h3>
+          <textarea
+          required
+            class="textarea"
+            name="productDescription"
+            rows="10"
+            cols="50"
+          ></textarea>
+        </div>
+        <div class="row confirmar-cancelar">
+            <input type="button" value="CANCELAR">
+            <input type="submit" value="CONFIRMAR">
+        </div>
+        <div class="errores">
+          <ul>
+            
+          </ul>
+        </div>
+      </form>
+    </div>
+    <script src="/script/validatorProducts.js"></script>
+    <!-- Footer -->
+    <%- include partials/footer.ejs %>
+  </body>
+</html>

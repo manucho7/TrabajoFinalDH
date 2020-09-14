@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Sign up</title>
+        <%- include partials/head.ejs %>
+        <!-- Fuentes -->
+        <link rel="stylesheet" href="/stylesheets/sign_up.css">
+        <!---->
+        <script>
+            function validateForm() {
+                const clave1 = document.formulario.clave1.value;
+                const clave2 = document.formulario.clave2.value;
+                if (clave1 == clave2) {
+                    return true;
+                }
+                else { 
+                    alert ("Las contrasenias ingresadas no coinciden")             
+                    return false; 
+                }
+                }
+        </script>
+    </head>
+  <body>
+    <!-- encabezado -->
+    <%- include partials/header.ejs %>
+    <div class="container">
+      <!--TITULO-->
+      <h1>Editar datos de la cuenta</h1>
+      <form
+        name="formulario"
+        method="POST"
+        action="/users/edit"
+        id="registros"
+        onsubmit="return validateForm()"
+        enctype="multipart/form-data"
+      >
+        <div class="crearNuevoCliente">
+          <div class="contenido">
+            <div class="row">
+              <div class="personal-info col-md-12 col-lg-6">
+                <h2>INFORMACIÓN PERSONAL</h2>
+                <!-- nombre de usuario -->
+                <p>Nombre</p>
+                <input
+                  type="text"
+                  id="nombrePersona"
+                  name="nombre"
+                  placeholder="Ingrese su nombre"
+                  value="<%= username %>"
+                  required
+                />
+                <p>Apellido</p>
+                <input
+                  type="text"
+                  id="apellido"
+                  name="apellido"
+                  placeholder="Ingrese su apellido"
+                  value="<%= apellido %>"
+                  required
+                />
+                <!--<select name="rol" id="">
+                    <option value="admin">Admin</option>
+                    <option value="user">User</option>
+                </select>-->
+                <input type="file" id="img" name="image" accept="image/*"/>
+                <img src="<%= avatar %>" width="150" alt="imagen usuario">
+                <label class="select-file" id="boton" for="fileImage"></label>
+              </div>
+              <div class="account-info col-md-12 col-lg-6">
+                <h2>DATOS DE LA CUENTA</h2>
+                <!--Datos de sesion-->
+                <p>Correo electronico</p>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Ingrese su email"
+                  value="<%= usuario %>"
+                  required
+                  disabled
+                />
+                <p>Contraseña</p>
+                <input
+                  type="password"
+                  id="password"
+                  name="clave1"
+                  placeholder="Ingrese su contraseña"
+                  value="<%= contrasena %>"
+                  required
+                />
+                <p>Repetir contraseña</p>
+                <input
+                  type="password"
+                  id="password"
+                  name="clave2"
+                  placeholder="Ingrese su contraseña"
+                  required
+                />
+                <div class="col-md-12 col-ls-6"></div>
+                <input type="submit" class="boton" value="CONFIRMAR CAMBIOS" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <%- include partials/footer.ejs %>
+  </body>
+</html>

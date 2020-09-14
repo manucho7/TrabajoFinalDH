@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script
+      src="https://kit.fontawesome.com/326a4aa2bc.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Fuentes -->
+    <link rel="stylesheet" href="/stylesheets/home.css" />
+    <link rel="stylesheet" href="/stylesheets/product_list.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <!--  -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <!-- encabezado -->
+    <%- include partials/header.ejs %>
+    <div class="container">
+      <!-- Imagen o texto sobre banner -->
+      <section class="banner">
+        <div class="banner-subtitulo">
+          <h2><%= categoryTitle %></h2>
+          <p>Remeras-SoMan Collection.</p>
+        </div>
+      </section>
+      <!-- productos -->
+      <h2><%= categoryTitle %></h2>
+      <section class="products row">
+        <% for(let i=0; i < products.length; i++){ %>
+        <article class="col-xs-12 col-md-6 col-lg-3 remeras">
+          <a href="/products/<%= products[i].title %>">
+            <img
+              class="photo"
+              src="<%= products[i].image %>"
+              alt="<%= products[i].title %>"
+            />
+            <label><%= products[i].title %></label>
+            <% if (rol === 'admin' && isUserLogged === 'true') { %>
+              <a class="product-link edit" href="/products/<%= products[i].title %>/edit"><i class="fas fa-pen"></i></a>
+              <form class="delete-icon" method="POST" action="/products/<%= products[i].title %>?_method=DELETE">
+                  <input class="product-link remove" type="submit" value="">
+                  </input>
+                  <i class="fas fa-trash-alt"></i>
+              </form>
+              <% } %>
+          </a>
+        </article>
+        <% } %>
+        <% if (rol === 'admin' && isUserLogged === 'true') { %>
+          <article class="col-xs-12 col-md-6 col-lg-3 remeras add-product">
+              <a class="add-new-product" href="/products/create"><i class="fas fa-plus-circle"></i></a>
+          </article>
+        <% } %>
+      </section>
+    </div>
+    <%- include partials/footer.ejs %>
+  </body>
+</html>

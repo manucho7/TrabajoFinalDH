@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="/stylesheets/header.css">
+<header class="encabezado <%= isUserLogged === 'true' ? 'is-login' : '' %>">
+  <a href="/" >
+    <img class="logo" src="../images/logo.png">
+    </img>
+  </a>
+  <div class="iconos">
+
+    <% if (isUserLogged === 'true') { %>
+      <a style="display: flex;align-items: center;" href="/users/edit"><img class="avatar" src="<%= avatar %>" height="50px">
+      <span style="margin-right: 20px"><%= username %></span></a>
+      <a href="/dashboard">
+        <i class="fas fa-chart-line"></i>
+      </a>
+    <% } else { %>
+      <a href="/users/login">
+        <i class="fas fa-user"></i>
+      </a>
+    <% } %>
+    <a href="/cart">
+      <i class="fas fa-cart-arrow-down"></i>
+    </a>
+    <a href="/users/logout">
+      <i class="fas fa-sign-out-alt"></i>
+    </a>
+  </div>
+</header>

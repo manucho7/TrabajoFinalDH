@@ -1,0 +1,158 @@
+.container {
+  width: 1200px;
+  background: white;
+  font-weight: 200;
+  padding: 85px 80px 35px 80px;
+}
+
+.article-header {
+  margin-bottom: 10px;
+}
+
+.article-header .article-photo img {
+  height: 330px;
+}
+
+.article-photo .imagen-vacia {
+  background: lightgray;
+  height: 200px;
+  width: 200px;
+}
+
+.article-photo .imagen-controls {
+  padding: 30px 0;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .article-header .article-photo {
+    text-align: initial !important;
+  }
+  .article-header .article-photo img {
+    height: 404px;
+  }
+
+  .productHighlights {
+    display: none !important;
+  }
+}
+
+.article-header .article-photo {
+  padding: 20px 0;
+}
+
+.article-header .row {
+  border-bottom: solid 1px #d7d8d8;
+}
+
+.article-price {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 50px;
+  max-width: 414px;
+}
+
+.article-price form .colors {
+  width: 113px;
+  background-color: tomato;
+  display: flex;
+  justify-content: space-around;
+  margin-left: 40px;
+  padding: 10px;
+}
+
+.article-price .controls {
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+.article-price .controls input {
+  margin-bottom: 15px;
+}
+
+.caracteristicas dt {
+  margin-right: 10px;
+  line-height: 50px;
+}
+
+.caracteristicas-content dt {
+  font-weight: 400;
+}
+.caracteristicas-content dd {
+  font-weight: 100;
+}
+
+.caracteristicas-content dt,
+.caracteristicas-content dd {
+  display: inline;
+}
+
+.caracteristicas ul {
+  list-style: none;
+}
+
+.productDescription {
+  flex-direction: column;
+}
+
+.title {
+  font-size: 45px;
+  font-weight: 200;
+}
+
+.subtitle {
+  font-size: 27px;
+  padding: 40px 0;
+  font-weight: 200;
+}
+
+.productDescription h3 {
+  padding-left: 15px;
+}
+
+.productDescription ul li {
+  list-style: square;
+}
+
+.productHighlights {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: solid 1px #d7d8d8;
+  margin-top: 30px;
+}
+
+.productHighlights img {
+  width: 20%;
+}
+
+.sliderPhotos {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.carousel-item img {
+  max-width: 300px;
+}
+
+.confirmar-cancelar {
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.confirmar-cancelar input {
+  width: 40%;
+  padding: 5px;
+}
+
+.errores {
+  color: red;
+  text-decoration: underline;
+}
+
+.errores li {
+  list-style-type: upper-roman;
+}

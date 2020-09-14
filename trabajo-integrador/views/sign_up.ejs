@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Sign up</title>
+        <%- include partials/head.ejs %>
+        <!-- Fuentes -->
+        <link rel="stylesheet" href="/stylesheets/sign_up.css">
+        <!---->
+        <script>
+            function validateForm() {
+                const clave1 = document.formulario.clave1.value;
+                const clave2 = document.formulario.clave2.value;
+                if (clave1 == clave2) {
+                    return true;
+                }
+                else { 
+                    alert ("Las contrasenias ingresadas no coinciden")             
+                    return false; 
+                }
+                }
+        </script>
+    </head>
+  <body>
+    <!-- encabezado -->
+    <%- include partials/header.ejs %>
+    <div class="container">
+      <!--TITULO-->
+      <h1>Crear nueva cuenta de cliente</h1>
+      <form
+        name="formulario"
+        method="POST"
+        action="http://localhost:3000/users/sign-up"
+        id="registros"
+        onsubmit="return validateForm()"
+        enctype="multipart/form-data"
+      >
+        <div class="crearNuevoCliente">
+          <div class="contenido">
+            <div class="row">
+              <div class="personal-info col-md-12 col-lg-6">
+                <h2>INFORMACIÓN PERSONAL</h2>
+                <!-- nombre de usuario -->
+                <p class="nombrePersona">Nombre</p>
+                <input
+                  type="text"
+                  id="nombrePersona"
+                  name="nombrePersona"
+                  placeholder="Ingrese su nombre"
+                  required
+                />
+                <p>Apellido</p>
+                <input
+                  type="text"
+                  id="apellido"
+                  name="apellido"
+                  placeholder="Ingrese su apellido"
+                  required
+                />
+                <input type="text" name="rol" value="user" hidden/>
+                <!--<select name="rol" id="">
+                    <option value="admin">Admin</option>
+                    <option value="user">User</option>
+                </select>
+                Query para convertir usuario en admin: 
+                UPDATE usuarios SET rol = 'admin' WHERE email = 'elmaiten44@gmail.com'
+              -->
+                <input type="file" id="fileImage" name="image" accept="image/*" />
+                <label class="select-file" id="boton" for="fileImage">Seleccionar archivo</label>
+              </div>
+              <div class="account-info col-md-12 col-lg-6">
+                <h2>DATOS DE LA CUENTA</h2>
+                <!--Datos de sesion-->
+                <p>Correo electronico</p>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Ingrese su email"
+                  required
+                />
+                <p>Contraseña</p>
+                <input
+                  type="password"
+                  id="password"
+                  name="clave1"
+                  placeholder="Ingrese su contraseña"
+                  required
+                />
+                <p>Repetir contraseña</p>
+                <input
+                  type="password"
+                  id="password"
+                  name="clave2"
+                  placeholder="Ingrese su contraseña"
+                  required
+                />
+                <div class="col-md-12 col-ls-6"></div>
+                <input type="submit" class="boton" value="REGISTRARSE" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="errores">
+          <ul>
+          </ul>
+        </div>
+      </form>
+    </div>
+    <%- include partials/footer.ejs %>
+    <script src="/script/validatorSign_up.js"></script>
+  </body>
+</html>

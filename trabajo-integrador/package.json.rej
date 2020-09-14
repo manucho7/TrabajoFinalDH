@@ -1,0 +1,10 @@
+diff a/trabajo-integrador/package.json b/trabajo-integrador/package.json	(rejected hunks)
+@@ -3,7 +3,7 @@
+   "version": "0.0.0",
+   "private": true,
+   "scripts": {
+-    "start": "node ./bin/www"
++    "start": "nodemon ./bin/www"
+   },
+   "dependencies": {
+     "cookie-parser": "~1.4.4",

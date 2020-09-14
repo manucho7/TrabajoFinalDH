@@ -1,0 +1,150 @@
+.container {
+  width: 1200px;
+  background: white;
+  font-weight: 200;
+  padding: 85px 80px 35px 80px;
+}
+
+.article-header {
+  margin-bottom: 10px;
+}
+
+.article-header .article-photo img {
+  height: 220px;
+}
+
+@media (max-width: 768px) {
+  .article-header .article-photo {
+    text-align: initial !important;
+  }
+  .article-header .article-photo img {
+    height: 404px;
+  }
+
+  .productHighlights {
+    display: none !important;
+  }
+}
+
+.article-header .article-photo {
+  text-align: center;
+}
+
+.article-header .row {
+  border-bottom: solid 1px #d7d8d8;
+}
+
+.article-price {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 50px;
+  max-width: 414px;
+}
+
+.article-price form .controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: -8px;
+}
+.article-price form .controls .amount-number {
+  width: 50px;
+  text-align: center;
+  background: lightgray;
+  border: none;
+  padding: 4px;
+  border-bottom: solid 1px #bababa;
+}
+
+.article-price form .controls .amount {
+  display: flex;
+  align-items: center;
+}
+.article-price form .controls .amount-substract,
+.article-price form .controls .amount-addition {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  width: 30px;
+}
+
+.article-price form .controls .submit input {
+  font-weight: 100;
+  font-size: 0.8em;
+  padding: 6px 17px;
+  background: lightgray;
+}
+
+.article-price form .colors {
+  width: 113px;
+  background-color: tomato;
+  display: flex;
+  justify-content: space-around;
+  margin-left: 40px;
+  padding: 10px;
+}
+
+.caracteristicas-content {
+}
+
+.caracteristicas-content dt {
+  font-weight: 400;
+}
+.caracteristicas-content dd {
+  font-weight: 100;
+}
+
+.caracteristicas-content dt,
+.caracteristicas-content dd {
+  display: inline;
+}
+
+.caracteristicas ul {
+  list-style: none;
+}
+
+.productDescription {
+  flex-direction: column;
+}
+
+.title {
+  font-size: 45px;
+  font-weight: 200;
+}
+
+.subtitle {
+  font-size: 27px;
+  padding: 40px 0;
+  font-weight: 200;
+}
+
+.productDescription h3 {
+  padding-left: 15px;
+}
+
+.productDescription ul li {
+  list-style: square;
+}
+
+.productHighlights {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: solid 1px #d7d8d8;
+  margin-top: 30px;
+}
+
+.productHighlights img {
+  width: 20%;
+}
+
+.sliderPhotos {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.carousel-item img {
+  max-width: 300px;
+}

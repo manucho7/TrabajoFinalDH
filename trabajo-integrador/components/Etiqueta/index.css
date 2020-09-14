@@ -1,0 +1,9 @@
+.etiqueta .card-body {
+    position: relative;
+}
+
+.etiqueta .col-auto {
+    position: absolute;
+    right: 0;
+    top: 0;
+}

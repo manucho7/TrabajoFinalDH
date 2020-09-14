@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Product description</title>
+
+    <%- include partials/head.ejs %>
+    <link rel="stylesheet" href="/stylesheets/product_desc.css" />
+  </head>
+  <body>
+    <!-- encabezado -->
+    <%- include partials/header.ejs %>
+    <div class="container">
+      <div class="article-header">
+        <div class="row">
+          <div class="col-md-5 col-xs-12 article-photo">
+            <img src="<%= image %>" alt="<%= title %>" />
+          </div>
+          <div class="col-md-6 col-xs-12 article-price">
+            <h1 class="title"><%= title %></h1>
+            <h3 class="subtitle-price"><%= price %></h3>
+            <form method="POST" action="http://localhost:3000/cart">
+              <label>Disponible: <%= availableAmount %> </label>
+              <div class="controls">
+                <div class="amount">
+                  <input min="1" name="amountNumber" class="amount-number" type="number" value="<%= amount %>" />
+                  <input hidden name="title" type="text" value="<%= title %>"/>
+                </div>
+                <div class="submit">
+                  <input
+                    type="submit"
+                    value="AGREGAR AL CARRITO"
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <section class="caracteristicas">
+        <h3 class="subtitle">CARACTERISTICAS</h3>
+        <div class="caracteristicas-content row">
+          <% if(category === "Billeteras") {%>
+          <dl class="caract-list col-xs-12 col-md-6">
+            <dt>Genero:</dt>
+            <dd><%= productGender %></dd>
+            <br />
+            <dt>Cantidad de divisiones para tarjetas:</dt>
+            <dd><%= divisiones %></dd>
+            <br />
+          </dl>
+          <dl class="caract-list col-xs-12 col-md-6">
+            <dt>Proteccion RFID:</dt>
+            <dd><%= proteccionRFID %></dd>
+            <br />
+            <dt>Garantia:</dt>
+            <dd><%= garantia %></dd>
+            <br/>
+          </dl>
+          <% } %>
+          <% if(category === "Remeras") {%>
+            <dl class="caract-list col-xs-12 col-md-6">
+              <dt>Genero:</dt>
+              <dd><%= productGender %></dd>
+              <br/>
+              <dt>Material principal:</dt>
+              <dd><%= material %></dd>
+              <br />
+            </dl>
+          <% } %>
+        </div>
+      </section>
+      <div class="productDescription row">
+        <h3 class="subtitle">DESCRIPCION DEL PRODUCTO</h3>
+        <p>
+          <%= (category === "Remeras") ? "La remera es parte de la primer colección de MVW, hechas con el mejor algodón (100%) y cuello redondo. Diseñada y fabricada en Argentina" : "La billetera es una versión moderna del clásico tarjetero. Con su perfil delgado, entra perfectamente en todos los bolsillos sin ser un clásico bodoque. El mecanismo innovador te permite deslizar las 6 tarjetas que más usas con un simple e inmediato movimiento. Siempre lista. Material de aluminio que cuenta con protección RFID evitando robo de datos de tus tarjetas" %>
+        </p>
+      </div>
+      <div class="productHighlights row">
+        <h3 class="subtitle">PRODUCTOS DESTACADOS</h4>
+        <section class="sliderPhotos">
+          <img
+            src="/images/oslo1.jpg"
+            alt="Billetera Oslo"
+          />
+          <img
+            src="/images/camuflaje1.png"
+            alt="Remera Camouflage"
+          />
+          <img
+            src="/images/milano1.jpg"
+            alt="Billetera Milano"
+          />
+          <img
+            src="/images/halfPack1.png"
+            alt="Remera Half-Pack"
+          />
+        </section>
+      </div>
+    </div>
+    <script>
+    </script>
+      <!-- Footer -->
+      <%- include partials/footer.ejs %>
+  </body>
+</html>

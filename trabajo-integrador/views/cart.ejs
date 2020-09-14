@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Cart</title>
+        <!-- Fuentes -->
+        <link rel="stylesheet" href="/stylesheets/cart.css">
+        <%- include partials/head.ejs %>
+    </head>
+  <body>
+    <!-- encabezado -->
+    <%- include partials/header.ejs %>
+    <div class="container">
+      <!-- encabezado -->
+      <!--Titulo-->
+      <h2>Carrito</h2>
+      <!---Parte superior -->
+      <!---Dentro -->
+      <table class="cajaPrincipal">
+        <thead>
+        <tr class="caja1">
+          <th class="DatosProductos"></th>
+          <th class="DatosProductos">
+            Producto
+          </th>
+          <th class="DatosProductos">
+            Precio
+          </th>
+          <th class="DatosProductos">
+            Cantidad
+          </th>
+          <th class="DatosProductos">
+            Subtotal
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (let i = 0; i < products.length; i++) { %>
+        <tr class="caja2">
+          <td class="DatosProductos">
+            <% if (products[i].image) { %>
+              <img src="<%= products[i].image %>" alt="products[i].title" />
+            <% } else { %>
+              <i class="far fa-times-circle"></i>
+            <% } %>
+          </td>
+          <td class="DatosProductos">
+            <li class="lista" class="nombre"><%= products[i].title %></li>
+          </td>
+          <td class="DatosProductos">
+            <li class="lista">$ <%= products[i].price %></li>
+          </td>
+          <td class="DatosProductos">
+            <form method="POST" 
+            action="/cart/edit/<%= email %>?_method=PUT">
+              <input
+                value="<%= products[i].amount %>"
+                class="completarCant"
+                name="newAmount"
+                type="text"
+                placeholder="cantidad"
+              />
+              <input
+                value="<%= products[i].title %>"
+                class="completarCant"
+                name="title"
+                type="text"
+                hidden
+              />
+              <input
+              value="<%= products[i].idCarritoProducto %>"
+              class="completarCant"
+              name="idCarritoProducto"
+              type="text"
+              hidden
+            />
+              <button type="submit" class="botonEditar"><i class="fas fa-pen"></i></button>
+            </form>
+          </td>
+          <td class="DatosProductos">
+            <li class="lista">$ <%= products[i].total %></li>
+          </td>
+        </tr>
+        <% } %>
+        <!---Parte inferior-->
+        </tbody>
+      </table>
+      <div class="caja3">
+        <form method="POST" action="cart/clean/<%= email %>?_method=DELETE">
+          <button class="botonVaciar">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </form>
+      </div>
+      <form name="formulario" method="get" id="compra">
+        <div class="col-xs-12 col-lg-6 position">
+          <div class="caja4">
+            <div class="cajita">
+              <div class="totalCarrito">
+                <h1>
+                  Total carrito
+                </h1>
+              </div>
+              <div class="caja5">
+                <ul class="subtotal">
+                  <li>Subtotal</li>
+                  <li>$ <%= subtotal %></li>
+                </ul>
+                <hr />
+                <ul class="envio">
+                  <li>Envio</li>
+                  <li>$ <%= envio %></li>
+                </ul>
+                <hr />
+                <ul class="descuento">
+                  <li>Descuento</li>
+                  <li>$ <%= descuento %></li>
+                </ul>
+                <hr />
+                <ul class="total">
+                  <li>Total</li>
+                  <li>$ <%= total %></li>
+                </ul>
+                <hr />
+                <button class="botonFinalizar">
+                  Finalizar compra
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      <form name="formulario" method="get" id="resumen">
+        <div class="col-12">
+          <div class="caja4"></div>
+        </div>
+      </form>
+    </div>
+    <%- include partials/footer.ejs %>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include partials/head.ejs %>
+    <title>MVW</title>
+    <!-- Fuentes -->
+    <link rel="stylesheet" href="/stylesheets/home.css" />
+    
+  </head>
+  <body>
+
+     <!-- encabezado -->
+     <%- include partials/header.ejs %>
+     
+    <div class="container">
+    
+      <!-- Imagen o texto sobre banner -->
+      <section class="banner">
+        <div class="banner-subtitulo">
+          <h2><%= title %></h2>
+          <p>Remeras-SoMan Collection.</p>
+        </div>
+      </section>
+
+      <!-- productos -->
+      <section class="products row">
+        <h1><b>CONOCE NUESTROS PRODUCTOS</b></h1>
+
+        <article class="col-6 remeras">
+          <a href="/products?categoria=Remeras">
+            <img class="photo" src="/images/packX3.png" alt="pdto 03" />
+            <h3>REMERAS</h3>
+          </a>
+        </article>
+
+        <article class="col-6 billeteras">
+          <a href="/products?categoria=Billeteras">
+            <img class="photo" src="/images/berlin1.jpg" alt="pdto 03" />
+            <h3>BILLETERAS</h3>
+          </a>
+        </article>
+      </section>
+
+      <div class="video">
+        <iframe
+          width="100%"
+          height="315"
+          src="https://www.youtube.com/embed/bEVwW3Y1IRI"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+    <%- include partials/footer.ejs %>
+  </body>
+</html>
